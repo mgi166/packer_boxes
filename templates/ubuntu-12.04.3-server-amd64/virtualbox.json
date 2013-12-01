@@ -27,8 +27,14 @@
 	"provisioners": [{
 		"type": "shell",
 		"scripts": [
+			"templates/ubuntu-12.04.3-server-amd64/base.sh",
 			"templates/ubuntu-12.04.3-server-amd64/setup_ssh.sh"
-		]
+		],
+		"override": {
+			"virtualbox": {
+				"execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+			}
+		}
 	}],
 	"post-processors" : [{
 		"type": "vagrant",
