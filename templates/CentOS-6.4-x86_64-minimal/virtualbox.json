@@ -1,0 +1,26 @@
+{
+     "builders" : [
+          {
+               "type" : "virtualbox",
+               "guest_os_type" : "RedHat_64",
+               "iso_url" : "http://ftp.riken.jp/Linux/centos/6.4/isos/x86_64/CentOS-6.4-x86_64-minimal.iso",
+               "iso_checksum" : "4a5fa01c81cc300f4729136e28ebe600",
+               "iso_checksum_type" : "md5",
+               "ssh_username" : "vagrant",
+               "ssh_password" : "vagrant",
+               "ssh_wait_timeout" : "5m",
+               "shutdown_command" : "echo 'vagrant' | sudo -S shutdown -P now",
+               "http_directory" : "./templates/CentOS-6.4-x86_64-minimal/",
+               "vboxmanage" : [
+                    ["modifyvm", "{{.Name}}", "--memory", "1024"],
+                    ["modifyvm", "{{.Name}}", "--cpus", "1"]
+               ],
+               "boot_command" : [
+                    "<esc>",
+                    "<wait>",
+                    "linux ks=http://{{.HTTPIP}}:{{.HTTPPort}}/ks.cfg",
+                    "<enter>"
+               ]
+          }
+     ]
+}
