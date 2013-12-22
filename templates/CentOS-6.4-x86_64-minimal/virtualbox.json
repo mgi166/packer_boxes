@@ -22,5 +22,11 @@
                     "<enter>"
                ]
           }
-     ]
+     ],
+    "post-processors" : [
+        {
+            "type": "vagrant",
+            "output": "./CentOS-6.4-x86_64-minimal.box"
+        }
+    ]
 }
