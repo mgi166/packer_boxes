@@ -28,7 +28,8 @@
 			"type" : "shell",
 			"scripts" : [
 				"./templates/CentOS-6.4-x86_64-minimal/base.sh",
-				"./templates/CentOS-6.4-x86_64-minimal/setup_ssh.sh"
+				"./templates/CentOS-6.4-x86_64-minimal/setup_ssh.sh",
+				"./templates/CentOS-6.4-x86_64-minimal/vb.sh"
 			],
 			"override" : {
 				"virtualbox" : {
