@@ -27,6 +27,7 @@
 		{
 			"type" : "shell",
 			"scripts" : [
+				"./templates/CentOS-6.4-x86_64-minimal/setup_sudo.sh",
 				"./templates/CentOS-6.4-x86_64-minimal/setup_ssh.sh"
 			],
 			"override" : {
