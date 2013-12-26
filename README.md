@@ -1,5 +1,5 @@
 # packer_boxes
-This is a packer example that creates a box for virtual box.
+This is a packer example that creates a box for virtual box.  
 Enable to create minimal boxes for using this templates at once.
 
 # Requirements
@@ -29,4 +29,5 @@ This example output CentOS-6.4-x86_64-minimal.box.
    * For using vagrant, it is NECESSARY to using 'vagrant-vbguest' of vagrant plugin
 * CentOS
    * For using vagrant, it is UNNECESARY to using 'vagrant-vbguest' of vagrant plugin
+
 =====
