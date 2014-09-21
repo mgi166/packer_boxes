@@ -1,0 +1,19 @@
+{
+    "builders": [
+        {
+            "type": "virtualbox-iso",
+            "guest_os_type": "RedHat_64",
+            "iso_url": "http://ftp.riken.jp/Linux/centos/7/isos/x86_64/CentOS-7.0-1406-x86_64-Minimal.iso",
+            "iso_checksum_type": "md5",
+            "iso_checksum": "e3afe3f1121d69c40cc23f0bafa05e5d",
+            "ssh_username": "vagrant",
+            "ssh_password": "vagrant",
+            "http_directory" : "./templates/CentOS-6.4-x86_64-minimal/",
+            "boot_command" : [
+                "<wait>",
+                "linux ks=http://{{.HTTPIP}}:{{.HTTPPort}}/ks.cfg",
+                "<enter>"
+            ]
+        }
+    ]
+}
