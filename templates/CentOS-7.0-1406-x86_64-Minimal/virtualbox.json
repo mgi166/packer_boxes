@@ -17,5 +17,26 @@
                 "<wait>"
             ]
         }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "scripts" : [
+                "./templates/CentOS-7.0-1406-x86_64-Minimal/base.sh",
+                "./templates/CentOS-7.0-1406-x86_64-Minimal/setup_ssh.sh",
+                "./templates/CentOS-7.0-1406-x86_64-Minimal/vb.sh"
+            ],
+            "override" : {
+                "virtualbox-iso" : {
+                    "execute_command" : "echo 'vagrant' | {{.Vars}} sudo -S -E sh {{.Path}}"
+                }
+            }
+        }
+    ],
+    "post-processors" : [
+        {
+            "type": "vagrant",
+            "output": "./CentOS-7.0-1406-x86_64-Minimal.box"
+        }
     ]
 }
